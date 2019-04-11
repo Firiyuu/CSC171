@@ -18,7 +18,8 @@
 
 window.onload = () => {
 
-    var tiles =  "{{ first }}"
+    var tiles =  {{ first }};
+    console.log(tiles);
 
     var $target = undefined;
 
@@ -33,6 +34,8 @@ window.onload = () => {
             var correct = index + 1 == this;
             var cssClass = this == 0 ? "empty" : (correct ? "correct" : "incorrect");
 
+
+
             var $li = $("<li>", {
                 "class": cssClass,
                 "data-tile": this,
@@ -42,7 +45,6 @@ window.onload = () => {
             $ul.append($li);
         })
 
-        var solvable = checkSolvable();
 
         $target.html($ul);
     };

@@ -5,6 +5,7 @@ from optparse import OptionParser
 import math
 from struct import pack
 import heapq
+import random
  
 class Solver:
     def __init__(self, n):
@@ -144,6 +145,7 @@ def breadth(options, args):
             initial.append(int(n))
     else:
         initial = [8,7,6,5,4,3,2,1,0]
+        random.shuffle(initial)
  
     solver = Solver(int(math.sqrt(len(initial))))
  
